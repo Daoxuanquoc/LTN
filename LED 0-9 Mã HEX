@@ -1,0 +1,36 @@
+byte pins[8] = {2,3,4,6,7,8,9};
+byte num0 = 0x3F;
+byte num1 = 0x0C;
+byte num2 = 0x5B;
+byte num3 = 0x5E;
+byte num4 = 0x6C;
+byte num5 = 0x76;
+byte num6 = 0x77;
+byte num7 = 0x1C;
+byte num8 = 0x7F;
+byte num9 = 0x7E;
+ 
+void printN(byte _digit) {
+  for (int i = 0; i < 8; i++) {
+    digitalWrite(pins[i], bitRead(_digit, i ));
+  }    
+}
+ 
+void setup() {
+  for(int i = 0; i <= 9; i++) {
+    pinMode(pins[i], OUTPUT);
+  }
+}
+ 
+void loop() {
+  printN(num0); delay(800);
+  printN(num1); delay(800);
+  printN(num2); delay(800);
+  printN(num3); delay(800);
+  printN(num4); delay(800);
+  printN(num5); delay(800);
+  printN(num6); delay(800);
+  printN(num7); delay(800);
+  printN(num8); delay(600);
+  printN(num9); delay(600);
+}
